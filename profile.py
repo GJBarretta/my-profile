@@ -18,7 +18,13 @@ pc = portal.Context()
 request = pc.makeRequestRSpec()
  
 # Add a raw PC to the request.
-node = request.RawPC("node")
+node = request.XenVM("node")
+
+# Set the operating system.
+node.disk_image = CENTOS7-64-STD 
+
+# Add a public IP address.
+node.routable_control_ip = "true"
 
 # Install and execute a script that is contained in the repository.
 node.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
