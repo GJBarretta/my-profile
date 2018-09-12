@@ -21,7 +21,7 @@ request = pc.makeRequestRSpec()
 node = request.XenVM("node")
 
 # Set the operating system.
-node.disk_image = CENTOS7-64-STD 
+node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD" 
 
 # Add a public IP address.
 node.routable_control_ip = "true"
